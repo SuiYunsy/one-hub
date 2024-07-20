@@ -56,6 +56,7 @@ func updateChannelBalance(channel *model.Channel) (float64, error) {
 	c.Request = req
 
 	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36")
 
 	provider := providers.GetProvider(channel, c)
 	if provider == nil {

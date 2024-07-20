@@ -32,6 +32,7 @@ func testChannel(channel *model.Channel, testModel string) (err error, openaiErr
 		return err, nil
 	}
 	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36")
 
 	w := httptest.NewRecorder()
 	c, _ := gin.CreateTestContext(w)
@@ -81,11 +82,11 @@ func buildTestRequest() *types.ChatCompletionRequest {
 		Messages: []types.ChatCompletionMessage{
 			{
 				Role:    "user",
-				Content: "You just need to output 'hi' next.",
+				Content: "say 1",
 			},
 		},
 		Model:     "",
-		MaxTokens: 2,
+		MaxTokens: 10,
 		Stream:    false,
 	}
 	return testRequest
