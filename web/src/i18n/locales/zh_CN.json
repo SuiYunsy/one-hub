@@ -190,6 +190,7 @@
     "typeLabel": "类型",
     "modelLabel": "模型",
     "durationLabel": "耗时",
+    "durationTooltip": "t/s：输出令牌的数量除以总生成时间，表示生成速度",
     "inputLabel": "输入",
     "outputLabel": "输出",
     "quotaLabel": "额度",
@@ -278,6 +279,7 @@
     "submissionResult": "提交结果",
     "taskStatus": "任务状态",
     "progress": "进度",
+    "timeConsuming": "耗时",
     "resultImage": "结果图片",
     "prompt": "Prompt",
     "promptEn": "PromptEn",
@@ -478,6 +480,11 @@
         "chatImageRequestProxy": {
           "label": "图片检测代理",
           "placeholder": "聊天图片检测代理设置，如果不设置可能会泄漏服务器ip"
+        },
+        "CFWorkerImageUrl": {
+          "label": "Cloudflare Worker 图片代理",
+          "key": "Cloudflare Worker 图片代理key,如果没有配置请忽略",
+          "alert": "这里是Cloudflare Worker的图片代理地址，你可以通过部署https://github.com/MartialBE/get-image-by-cf，来使用，它和图片检测代理可以只设置其中一个。注意有些图片链接可能会拒绝CF的访问导致检测失败。"
         },
         "saveButton": "保存其他设置"
       },

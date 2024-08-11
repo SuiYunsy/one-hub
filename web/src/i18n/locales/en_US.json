@@ -41,7 +41,8 @@
     "outputLabel": "Output",
     "quotaLabel": "Quota",
     "detailLabel": "Detail",
-    "searchLogsInfo": "Please check the recharge records and invitation records in the logs. For recharge records, select the type [Recharge] in the log; for invitation records, select [System] in the log."
+    "searchLogsInfo": "Please check the recharge records and invitation records in the logs. For recharge records, select the type [Recharge] in the log; for invitation records, select [System] in the log.",
+    "durationTooltip": "t/s: The number of output tokens divided by the total generation time, indicating the generation speed"
   },
   "tableToolBar": {
     "tokenName": "Token Name",
@@ -125,7 +126,8 @@
     "resultImage": "Result Image",
     "prompt": "Prompt",
     "promptEn": "PromptEn",
-    "failureReason": "Failure Reason"
+    "failureReason": "Failure Reason",
+    "timeConsuming": "time consuming"
   },
   "analytics": "Analytics",
   "analytics_index": {
@@ -448,7 +450,12 @@
           "label": "Image Detection Proxy",
           "placeholder": "Chat image detection proxy settings, may leak server IP if not set"
         },
-        "saveButton": "Save Other Settings"
+        "saveButton": "Save Other Settings",
+        "CFWorkerImageUrl": {
+          "alert": "Here is the image proxy address of Cloudflare Worker. You can use it by deploying https://github.com/MartialBE/get-image-by-cf. You can set only one of it and the image detection proxy. \nNote that some image links may deny CF access and cause detection failure.",
+          "key": "Cloudflare Worker image proxy key, please ignore if not configured",
+          "label": "Cloudflare Worker Image Proxy"
+        }
       },
       "paymentSettings": {
         "title": "Payment Settings",
