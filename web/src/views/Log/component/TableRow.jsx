@@ -59,7 +59,7 @@ function requestTSLabelOptions(request_ts) {
   return color;
 }
 
-export default function LogTableRow({ item, userIsAdmin }) {
+export default function LogTableRow({ item, userIsAdmin, userGroup }) {
   const { t } = useTranslation();
   let request_time = item.request_time / 1000;
   let request_time_str = request_time.toFixed(2) + ' 秒';
@@ -83,6 +83,16 @@ export default function LogTableRow({ item, userIsAdmin }) {
             </Label>
           </TableCell>
         )}
+
+        <TableCell>
+          {item?.metadata?.group_name ? (
+            <Label color="default" variant="soft">
+              {userGroup[item.metadata.group_name]?.name || '跟随用户'}
+            </Label>
+          ) : (
+            ''
+          )}
+        </TableCell>
         <TableCell>
           {item.token_name && (
             <Label color="default" variant="soft">
@@ -110,7 +120,8 @@ export default function LogTableRow({ item, userIsAdmin }) {
 
 LogTableRow.propTypes = {
   item: PropTypes.object,
-  userIsAdmin: PropTypes.bool
+  userIsAdmin: PropTypes.bool,
+  userGroup: PropTypes.object
 };
 
 function viewModelName(model_name, isStream) {
@@ -165,12 +176,14 @@ function viewInput(item, t) {
   let totalOutputTokens = completion_tokens;
 
   let show = false;
+  const inputAudioTokensRatio = metadata?.input_audio_tokens_ratio || 20;
+  const outputAudioTokensRatio = metadata?.output_audio_tokens_ratio || 10;
 
   const tooltipContent = [
     { key: 'input_text_tokens', label: t('logPage.inputTextTokens'), rate: 1 },
     { key: 'output_text_tokens', label: t('logPage.outputTextTokens'), rate: 1 },
-    { key: 'input_audio_tokens', label: t('logPage.inputAudioTokens'), rate: 20 },
-    { key: 'output_audio_tokens', label: t('logPage.outputAudioTokens'), rate: 10 },
+    { key: 'input_audio_tokens', label: t('logPage.inputAudioTokens'), rate: inputAudioTokensRatio },
+    { key: 'output_audio_tokens', label: t('logPage.outputAudioTokens'), rate: outputAudioTokensRatio },
     { key: 'cached_tokens', label: t('logPage.cachedTokens'), rate: 0.5 }
   ]
     .filter(({ key }) => metadata[key] > 0)
