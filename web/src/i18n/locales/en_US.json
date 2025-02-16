@@ -88,7 +88,8 @@
     "requiredKey": "Key cannot be empty",
     "requiredModels": "Model cannot be empty",
     "requiredName": "Name is required",
-    "validJson": "Must be a valid JSON string"
+    "validJson": "Must be a valid JSON string",
+    "copyModels": "Copy model"
   },
   "channel_index": {
     "AzureApiVersion": "Azure version number",
@@ -352,7 +353,8 @@
     "type": "Type",
     "inputAudioTokensRatio": "Audio input ratio",
     "other": "Other",
-    "outputAudioTokensRatio": "Audio output ratio"
+    "outputAudioTokensRatio": "Audio output ratio",
+    "rate": "Rate"
   },
   "nova 映射": "nova mapping",
   "onyx 映射": "onyx mapping",

@@ -162,7 +162,8 @@
     "modelHeaderValue": "自定义Header Value",
     "addModelHeader": "添加自定义Header",
     "collapse": "收起",
-    "expand": "展开"
+    "expand": "展开",
+    "copyModels": "复制模型"
   },
   "token_index": {
     "token": "令牌",
@@ -423,6 +424,7 @@
     "group": "分组",
     "inputMultiplier": "输入价格",
     "outputMultiplier": "输出价格",
+    "rate": "倍率",
     "search": "搜索",
     "tokens": "按量付费",
     "times": "按次付费",
