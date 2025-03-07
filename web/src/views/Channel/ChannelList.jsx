@@ -335,7 +335,7 @@ export default function ChannelList() {
           </Button>
         </ButtonGroup>
       </Stack>
-      <Stack mb={5}>
+      {/* <Stack mb={5}>
         <Alert severity="info">
           {t('channel_index.priorityWeightExplanation')}
           <br />
@@ -347,7 +347,7 @@ export default function ChannelList() {
           <br />
           {t('channel_index.description4')}
         </Alert>
-      </Stack>
+      </Stack> */}
       <Card>
         <Box component="form" noValidate>
           <TableToolBar filterName={toolBarValue} handleFilterName={handleToolBarValue} groupOptions={groupOptions} tags={tags} />
@@ -365,13 +365,13 @@ export default function ChannelList() {
           <Container>
             {matchUpMd ? (
               <ButtonGroup variant="outlined" aria-label="outlined small primary button group">
-                <Button onClick={() => handleRefresh(true)} startIcon={<Icon icon="solar:refresh-circle-bold-duotone" width={18} />}>
-                  {t('channel_index.refreshClearSearchConditions')}
-                </Button>
                 <Button onClick={searchChannels} startIcon={<Icon icon="solar:magnifer-bold-duotone" width={18} />}>
                   {t('channel_index.search')}
                 </Button>
-                <Button
+                <Button onClick={() => handleRefresh(true)} startIcon={<Icon icon="solar:refresh-circle-bold-duotone" width={18} />}>
+                  {t('channel_index.refreshClearSearchConditions')}
+                </Button>
+                {/* <Button
                   onClick={() => handlePopoverOpen(t('channel_index.testAllChannels'), testAllChannels)}
                   startIcon={<Icon icon="solar:test-tube-bold-duotone" width={18} />}
                 >
@@ -388,7 +388,7 @@ export default function ChannelList() {
                   startIcon={<Icon icon="solar:trash-bin-trash-bold-duotone" width={18} />}
                 >
                   {t('channel_index.deleteDisabledChannels')}
-                </Button>
+                </Button> */}
               </ButtonGroup>
             ) : (
               <Stack

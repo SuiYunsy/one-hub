@@ -326,7 +326,7 @@ export default function ChannelTableRow({ item, manageChannel, handleOpenModal, 
           sx: { minWidth: 140 }
         }}
       >
-        {!hideEdit && (
+        {/* {!hideEdit && ( */}
           <MenuItem
             onClick={() => {
               handleCloseMenu();
@@ -337,8 +337,12 @@ export default function ChannelTableRow({ item, manageChannel, handleOpenModal, 
             <Icon icon="solar:pen-bold-duotone" style={{ marginRight: '16px' }} />
             {t('common.edit')}
           </MenuItem>
-        )}
+        {/* )} */}
 
+        <MenuItem onClick={() => setOpenCheck(true)}>
+          <Icon icon="solar:checklist-minimalistic-bold" style={{ marginRight: '16px' }} />
+          {t('channel_row.check')}
+        </MenuItem>
         <MenuItem
           onClick={() => {
             handleCloseMenu();
@@ -347,10 +351,6 @@ export default function ChannelTableRow({ item, manageChannel, handleOpenModal, 
         >
           <Icon icon="solar:copy-bold-duotone" style={{ marginRight: '16px' }} />
           {t('token_index.copy')}
-        </MenuItem>
-        <MenuItem onClick={() => setOpenCheck(true)}>
-          <Icon icon="solar:checklist-minimalistic-bold" style={{ marginRight: '16px' }} />
-          {t('channel_row.check')}
         </MenuItem>
         {CHANNEL_OPTIONS[item.type]?.url && (
           <MenuItem
