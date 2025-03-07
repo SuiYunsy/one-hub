@@ -8,6 +8,7 @@ const defaultConfig = {
     proxy: '',
     test_model: '',
     model_mapping: [],
+    model_headers: [],
     models: [],
     groups: ['default'],
     plugin: {},
