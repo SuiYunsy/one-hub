@@ -438,13 +438,15 @@ const typeConfig = {
   },
   45: {
     input: {
+      base_url: '',
       models: ['black-forest-labs/FLUX.1-dev', 'black-forest-labs/FLUX.1-schnell']
     },
     inputLabel: {
+      base_url: '渠道API地址',
       provider_models_list: '从Siliconflow获取模型列表'
     },
     prompt: {
-      base_url: ''
+      base_url: '官方api地址https://api.siliconflow.com即将停用，请使用https://api.siliconflow.cn'
     },
     modelGroup: 'Siliconflow'
   },
@@ -464,7 +466,7 @@ const typeConfig = {
     },
     prompt: {
       key: '密钥信息请参考https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens',
-      base_url: 'https://models.github.ai/inference'
+      base_url: 'https://models.inference.ai.azure.com'
     },
     modelGroup: 'Github'
   },

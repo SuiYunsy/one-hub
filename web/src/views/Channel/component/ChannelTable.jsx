@@ -161,7 +161,7 @@ export default function ChannelTable({ tag }) {
             />
             <TableBody>
               {channels.map((row) => (
-                <ChannelTableRow item={row} key={'channelsTag' + row.id} hideEdit={true} manageChannel={manageChannel} />
+                <ChannelTableRow item={row} key={'channelsTag' + row.id} manageChannel={manageChannel} />
               ))}
             </TableBody>
           </Table>

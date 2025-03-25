@@ -365,11 +365,11 @@ export default function ChannelList() {
           <Container>
             {matchUpMd ? (
               <ButtonGroup variant="outlined" aria-label="outlined small primary button group">
-                <Button onClick={searchChannels} startIcon={<Icon icon="solar:magnifer-bold-duotone" width={18} />}>
-                  {t('channel_index.search')}
-                </Button>
                 <Button onClick={() => handleRefresh(true)} startIcon={<Icon icon="solar:refresh-circle-bold-duotone" width={18} />}>
                   {t('channel_index.refreshClearSearchConditions')}
+                </Button>
+                <Button onClick={searchChannels} startIcon={<Icon icon="solar:magnifer-bold-duotone" width={18} />}>
+                  {t('channel_index.search')}
                 </Button>
                 {/* <Button
                   onClick={() => handlePopoverOpen(t('channel_index.testAllChannels'), testAllChannels)}
